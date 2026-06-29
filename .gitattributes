@@ -1,0 +1,7 @@
+# Normalize line endings. Keep LF for everything that is executed in a
+# Linux container or by PHP, so Windows checkouts cannot break the build.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary
