@@ -1,0 +1,48 @@
+<?php
+/**
+ * Reveille – Deutsche Sprachdatei.
+ *
+ * @package Reveille
+ * @license MIT
+ */
+
+# Plugin-Manifest
+$s_plugin_title       = 'Reveille';
+$s_plugin_description = 'Lege jedes Ticket schlafen – und wecke es genau dann, wenn es zählt.';
+
+# Verwaltungsmenü
+$s_menu_config    = 'Reveille-Konfiguration';
+$s_menu_dashboard = 'Reveille-Dashboard';
+
+# Seitentitel
+$s_config_title    = 'Reveille – Konfiguration';
+$s_dashboard_title = 'Reveille – Schlafende Tickets';
+
+# Warnungen
+$s_status_warning = 'Der Status „zurückgestellt" (15) ist in Ihrer MantisBT-Konfiguration nicht registriert. Reveille findet keine schlafenden Tickets, bis Sie den Status in der config_inc.php ergänzen (siehe Plugin-README).';
+
+# Konfigurationstabelle
+$s_col_project  = 'Projekt';
+$s_col_mode     = 'Aktivierungsmodus';
+$s_col_interval = 'Intervall';
+$s_col_unit     = 'Einheit';
+$s_col_sleeping = 'Schlafende Tickets';
+
+$s_mode_interval = 'Intervall vor Prüffälligkeit';
+$s_mode_year     = '1. Januar des Fälligkeitsjahres';
+
+$s_unit_days   = 'Tage';
+$s_unit_weeks  = 'Wochen';
+$s_unit_months = 'Monate';
+
+$s_btn_save    = 'Konfiguration speichern';
+$s_no_projects = 'Keine Projekte gefunden.';
+
+# Dashboard-Tabelle
+$s_col_id          = 'Ticket';
+$s_col_summary     = 'Zusammenfassung';
+$s_col_due_date    = 'Prüffälligkeit';
+$s_col_activate_on = 'Wiedervorlage am';
+$s_col_days_left   = 'Tage bis Aktivierung';
+
+$s_no_sleeping_tickets = 'Derzeit keine schlafenden Tickets.';
