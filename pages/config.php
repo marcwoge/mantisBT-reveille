@@ -98,15 +98,12 @@ while ( $t_row = db_fetch_array( $t_result ) ) {
  * -------------------------------------------------------------------------- */
 layout_page_header( plugin_lang_get( 'config_title' ) );
 layout_page_begin();
-
-# Plugin instance for the status-registration check.
-$t_plugin = new ReveillePlugin();
 ?>
 
 <div class="col-md-12 col-xs-12">
 <div class="space-10"></div>
 
-<?php if ( !$t_plugin->deferred_status_is_registered() ) { ?>
+<?php if ( !reveille_deferred_status_is_registered() ) { ?>
 	<div class="alert alert-warning">
 		<strong><?php echo plugin_lang_get( 'plugin_title' ); ?>:</strong>
 		<?php echo plugin_lang_get( 'status_warning' ); ?>

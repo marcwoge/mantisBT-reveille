@@ -2,47 +2,51 @@
 /**
  * Reveille – English language strings.
  *
+ * MantisBT plugin language variables must carry the full
+ * "plugin_<Basename>_" prefix; plugin_lang_get('key') looks up
+ * "plugin_Reveille_key".
+ *
  * @package Reveille
  * @license MIT
  */
 
 # Plugin manifest
-$s_plugin_title       = 'Reveille';
-$s_plugin_description = 'Schedule any ticket to sleep – wake it up exactly when it matters.';
+$s_plugin_Reveille_plugin_title       = 'Reveille';
+$s_plugin_Reveille_plugin_description = 'Schedule any ticket to sleep – wake it up exactly when it matters.';
 
 # Management menu
-$s_menu_config    = 'Reveille Configuration';
-$s_menu_dashboard = 'Reveille Dashboard';
+$s_plugin_Reveille_menu_config    = 'Reveille Configuration';
+$s_plugin_Reveille_menu_dashboard = 'Reveille Dashboard';
 
 # Page titles
-$s_config_title    = 'Reveille – Configuration';
-$s_dashboard_title = 'Reveille – Sleeping Tickets';
+$s_plugin_Reveille_config_title    = 'Reveille – Configuration';
+$s_plugin_Reveille_dashboard_title = 'Reveille – Sleeping Tickets';
 
 # Warnings
-$s_status_warning = 'The "deferred" status (15) is not registered in your MantisBT configuration. Reveille will not find any sleeping tickets until you add the status to config_inc.php (see the plugin README).';
+$s_plugin_Reveille_status_warning = 'The "deferred" status (15) is not registered in your MantisBT configuration. Reveille will not find any sleeping tickets until you add the status to config_inc.php (see the plugin README).';
 
 # Configuration table
-$s_col_project  = 'Project';
-$s_col_mode     = 'Activation mode';
-$s_col_interval = 'Interval';
-$s_col_unit     = 'Unit';
-$s_col_sleeping = 'Sleeping tickets';
+$s_plugin_Reveille_col_project  = 'Project';
+$s_plugin_Reveille_col_mode     = 'Activation mode';
+$s_plugin_Reveille_col_interval = 'Interval';
+$s_plugin_Reveille_col_unit     = 'Unit';
+$s_plugin_Reveille_col_sleeping = 'Sleeping tickets';
 
-$s_mode_interval = 'Interval before due date';
-$s_mode_year     = 'January 1st of due year';
+$s_plugin_Reveille_mode_interval = 'Interval before due date';
+$s_plugin_Reveille_mode_year     = 'January 1st of due year';
 
-$s_unit_days   = 'Days';
-$s_unit_weeks  = 'Weeks';
-$s_unit_months = 'Months';
+$s_plugin_Reveille_unit_days   = 'Days';
+$s_plugin_Reveille_unit_weeks  = 'Weeks';
+$s_plugin_Reveille_unit_months = 'Months';
 
-$s_btn_save    = 'Save configuration';
-$s_no_projects = 'No projects found.';
+$s_plugin_Reveille_btn_save    = 'Save configuration';
+$s_plugin_Reveille_no_projects = 'No projects found.';
 
 # Dashboard table
-$s_col_id          = 'Ticket';
-$s_col_summary     = 'Summary';
-$s_col_due_date    = 'Due date';
-$s_col_activate_on = 'Activates on';
-$s_col_days_left   = 'Days left';
+$s_plugin_Reveille_col_id          = 'Ticket';
+$s_plugin_Reveille_col_summary     = 'Summary';
+$s_plugin_Reveille_col_due_date    = 'Due date';
+$s_plugin_Reveille_col_activate_on = 'Activates on';
+$s_plugin_Reveille_col_days_left   = 'Days left';
 
-$s_no_sleeping_tickets = 'No sleeping tickets right now.';
+$s_plugin_Reveille_no_sleeping_tickets = 'No sleeping tickets right now.';

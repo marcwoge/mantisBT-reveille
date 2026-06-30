@@ -67,6 +67,20 @@ if ( !function_exists( 'reveille_active_status' ) ) {
 	}
 }
 
+if ( !function_exists( 'reveille_deferred_status_is_registered' ) ) {
+	/**
+	 * Whether the deferred status code is present in the status enum string.
+	 * File-scope helper so plugin pages can check it without instantiating the
+	 * plugin class (whose constructor requires a basename argument).
+	 * @return bool
+	 */
+	function reveille_deferred_status_is_registered() {
+		$t_status = reveille_deferred_status();
+		$t_enum   = config_get( 'status_enum_string' );
+		return (bool)preg_match( '/(^|,)\s*' . $t_status . '\s*:/', $t_enum );
+	}
+}
+
 if ( !function_exists( 'reveille_get_project_config' ) ) {
 	/**
 	 * Returns the Reveille configuration for a project, falling back to sensible
@@ -149,8 +163,10 @@ class ReveillePlugin extends MantisPlugin {
 	 * @return void
 	 */
 	function register() {
-		$this->name        = plugin_lang_get( 'plugin_title' );
-		$this->description  = plugin_lang_get( 'plugin_description' );
+		# Literal strings: the plugin language is not yet loaded during
+		# registration, so plugin_lang_get() would return the raw key here.
+		$this->name        = 'Reveille';
+		$this->description  = 'Schedule any ticket to sleep – wake it up exactly when it matters.';
 		$this->page         = 'config';
 
 		$this->version  = '1.0.0';
@@ -213,7 +229,7 @@ class ReveillePlugin extends MantisPlugin {
 	function schema() {
 		return array(
 			# 0
-			array( 'CreateTable', array( reveille_config_table(), "
+			array( 'CreateTableSQL', array( reveille_config_table(), "
 				project_id      I       NOTNULL PRIMARY,
 				mode            C(10)   NOTNULL DEFAULT \" 'interval' \",
 				interval_val    I       NOTNULL DEFAULT '90',
@@ -246,9 +262,6 @@ class ReveillePlugin extends MantisPlugin {
 	 * @return bool
 	 */
 	function deferred_status_is_registered() {
-		$t_status = reveille_deferred_status();
-		$t_enum   = config_get( 'status_enum_string' );
-		# Look for "<status>:" as a top-level entry, e.g. "15:deferred".
-		return (bool)preg_match( '/(^|,)\s*' . $t_status . '\s*:/', $t_enum );
+		return reveille_deferred_status_is_registered();
 	}
 }
