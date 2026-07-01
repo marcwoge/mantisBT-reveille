@@ -36,8 +36,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      # Live plugin development: the repository root is mounted as the plugin.
-      - ../:/var/www/html/plugins/Reveille
+      # Live plugin development: the Reveille/ plugin folder is mounted.
+      - ../Reveille:/var/www/html/plugins/Reveille
       # Pre-baked MantisBT configuration (DB credentials + deferred status).
       - ./config_inc.php:/var/www/html/config/config_inc.php
       # Language labels for the custom "deferred" status (Change Status page).

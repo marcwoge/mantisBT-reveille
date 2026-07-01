@@ -105,8 +105,10 @@ switch( $g_active_language ) {
 
 ### Manuell
 
-1. Dieses Repository nach `<mantis>/plugins/Reveille` kopieren
-   (der Ordnername **muss** `Reveille` lauten).
+1. Den Ordner [`Reveille/`](Reveille) aus diesem Repository nach
+   `<mantis>/plugins/Reveille` kopieren (der Ordnername **muss** `Reveille`
+   lauten). Das Release liefert diesen Ordner zusätzlich als fertiges
+   `Reveille/`-Zip zum direkten Ablegen.
 2. Den Status `deferred` in der `config_inc.php` ergänzen (siehe oben).
 3. Als Administrator anmelden → **Verwaltung → Plugins verwalten → Installieren**
    *Reveille*. Dabei wird die Tabelle `mantis_reveille_config` angelegt.

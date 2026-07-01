@@ -121,7 +121,8 @@ if ( !function_exists( 'reveille_compute_activate_on' ) ) {
 	 *  - mode "year":     1 January 00:00 of the due date's year.
 	 *  - mode "interval": <interval_val> <interval_unit> before the due date.
 	 *
-	 * @param int    $p_due_date_ts  Unix timestamp of the due date (0 = unset).
+	 * @param int    $p_due_date_ts  Unix timestamp of the due date (<= 1 = unset;
+	 *                               MantisBT stores unset dates as the null date 1).
 	 * @param string $p_mode         "year" | "interval"
 	 * @param int    $p_interval_val
 	 * @param string $p_interval_unit "days" | "weeks" | "months"
@@ -129,7 +130,8 @@ if ( !function_exists( 'reveille_compute_activate_on' ) ) {
 	 */
 	function reveille_compute_activate_on( $p_due_date_ts, $p_mode, $p_interval_val, $p_interval_unit ) {
 		$p_due_date_ts = (int)$p_due_date_ts;
-		if ( $p_due_date_ts <= 0 ) {
+		# MantisBT's "null date" (no due date set) is the timestamp 1, not 0.
+		if ( $p_due_date_ts <= 1 ) {
 			return false;
 		}
 

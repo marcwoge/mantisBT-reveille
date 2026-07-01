@@ -100,8 +100,9 @@ switch( $g_active_language ) {
 
 ### Manual
 
-1. Copy this repository to `<mantis>/plugins/Reveille`
-   (the folder name **must** be `Reveille`).
+1. Copy the [`Reveille/`](Reveille) folder from this repository to
+   `<mantis>/plugins/Reveille` (the folder name **must** be `Reveille`).
+   The release also ships this folder as a ready-to-drop `Reveille/` zip.
 2. Add the `deferred` status to `config_inc.php` (see above).
 3. Log in as an administrator → **Manage → Manage Plugins → Install** *Reveille*.
    This creates the `mantis_reveille_config` table.

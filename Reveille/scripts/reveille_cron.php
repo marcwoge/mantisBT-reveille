@@ -110,7 +110,8 @@ function reveille_cron_get_project_config( $p_project_id ) {
  */
 function reveille_cron_compute_activate_on( $p_due_date_ts, $p_mode, $p_interval_val, $p_interval_unit ) {
 	$p_due_date_ts = (int)$p_due_date_ts;
-	if ( $p_due_date_ts <= 0 ) {
+	# MantisBT's "null date" (no due date set) is the timestamp 1, not 0.
+	if ( $p_due_date_ts <= 1 ) {
 		return false;
 	}
 	if ( $p_mode === 'year' ) {
