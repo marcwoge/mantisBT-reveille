@@ -77,6 +77,30 @@ Sie den Status einfach, sobald es passt.
 > Die obige `status_enum_string` ist ein Beispiel; fügen Sie den Eintrag
 > `15:deferred` in Ihre bestehende Konfiguration ein, statt sie zu überschreiben.
 
+### Status-Beschriftungen für die Statuswechsel-Seite
+
+MantisBT baut seine **Statuswechsel-Seite** aus Sprachstrings pro Status
+(`<status>_bug_title` und `<status>_bug_button`). Für die eingebauten Status
+existieren diese; für den eigenen Status `deferred` müssen sie ergänzt werden –
+sonst erscheint beim Zurückstellen eines Tickets
+`APPLICATION WARNING #300: Zeichenkette „deferred_bug_title" nicht gefunden.`
+
+Ergänzen Sie sie in `config/custom_strings_inc.php` (Datei anlegen, falls noch
+nicht vorhanden):
+
+```php
+<?php
+switch( $g_active_language ) {
+    case 'german':
+        $s_deferred_bug_title  = 'Ticket zurückstellen';
+        $s_deferred_bug_button = 'Ticket zurückstellen';
+        break;
+    default:
+        $s_deferred_bug_title  = 'Defer this ticket';
+        $s_deferred_bug_button = 'Defer ticket';
+}
+```
+
 ## Installation
 
 ### Manuell

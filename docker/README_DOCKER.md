@@ -23,7 +23,9 @@ docker compose up -d --build
 Open <http://localhost:8080/admin/install.php> and click **Install/Upgrade
 Database**. The database credentials are already supplied via the mounted
 `config_inc.php` (db `bugtracker`, user `mantis`, password `mantis`), so you can
-just submit the form.
+just submit the form. The `deferred` status (15) and its Change-Status labels
+are pre-mounted too (`config_inc.php` + `custom_strings_inc.php`), so no manual
+status setup is needed.
 
 This creates the schema and the default administrator account
 (`administrator` / `root`).

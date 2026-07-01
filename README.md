@@ -72,6 +72,30 @@ and at install time. The plugin still installs – just add the status when read
 > The exact `status_enum_string` above is an example; merge the `15:deferred`
 > entry into your existing configuration rather than overwriting it.
 
+### Status labels for the Change Status page
+
+MantisBT builds its **Change Status** page from per-status language strings
+(`<status>_bug_title` and `<status>_bug_button`). These exist for the built-in
+statuses but must be supplied for the custom `deferred` status – otherwise you
+get `APPLICATION WARNING #300: String "deferred_bug_title" not found.` when you
+defer a ticket.
+
+Add them to `config/custom_strings_inc.php` (create the file if it doesn't
+exist yet):
+
+```php
+<?php
+switch( $g_active_language ) {
+    case 'german':
+        $s_deferred_bug_title  = 'Ticket zurückstellen';
+        $s_deferred_bug_button = 'Ticket zurückstellen';
+        break;
+    default:
+        $s_deferred_bug_title  = 'Defer this ticket';
+        $s_deferred_bug_button = 'Defer ticket';
+}
+```
+
 ## Installation
 
 ### Manual
