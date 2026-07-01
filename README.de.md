@@ -3,7 +3,7 @@
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg)](https://www.php.net/)
 [![MantisBT](https://img.shields.io/badge/MantisBT-2.x-F0F0F0.svg)](https://www.mantisbt.org/)
 [![Lizenz: MIT](https://img.shields.io/badge/Lizenz-MIT-yellow.svg)](LICENSE)
-[![Gepflegt](https://img.shields.io/badge/Gepflegt-ja-brightgreen.svg)](https://github.com/marcwoge/reveille)
+[![Gepflegt](https://img.shields.io/badge/Gepflegt-ja-brightgreen.svg)](https://github.com/marcwoge/mantisBT-reveille)
 
 > **Lege jedes Ticket schlafen – und wecke es genau dann, wenn es zählt.**
 

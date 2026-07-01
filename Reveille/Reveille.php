@@ -8,7 +8,7 @@
  * @package   Reveille
  * @author    Marc-Philipp Woge
  * @license   MIT
- * @link      https://github.com/marcwoge/reveille
+ * @link      https://github.com/marcwoge/mantisBT-reveille
  *
  * MantisBT only ever loads a single class file per plugin and expects it to be
  * named after the plugin directory ("Reveille.php") and to contain the class
@@ -178,7 +178,7 @@ class ReveillePlugin extends MantisPlugin {
 
 		$this->author  = 'Marc-Philipp Woge';
 		$this->contact = 'marc.woge@googlemail.com';
-		$this->url     = 'https://github.com/marcwoge/reveille';
+		$this->url     = 'https://github.com/marcwoge/mantisBT-reveille';
 	}
 
 	/**

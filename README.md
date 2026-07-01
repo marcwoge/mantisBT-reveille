@@ -3,7 +3,7 @@
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg)](https://www.php.net/)
 [![MantisBT](https://img.shields.io/badge/MantisBT-2.x-F0F0F0.svg)](https://www.mantisbt.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/marcwoge/reveille)
+[![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/marcwoge/mantisBT-reveille)
 
 > **Schedule any ticket to sleep – wake it up exactly when it matters.**
 
