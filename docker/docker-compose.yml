@@ -1,6 +1,6 @@
 # Reveille – local test environment.
 #
-# Brings up MantisBT (PHP 7.4) + MySQL 8 with the plugin live-mounted so you can
+# Brings up MantisBT (PHP 8.2) + MySQL 8 with the plugin live-mounted so you can
 # edit the plugin on the host and refresh the browser.
 #
 #   docker compose up -d --build
