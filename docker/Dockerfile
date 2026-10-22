@@ -4,7 +4,7 @@
 # covered by the lint workflow.
 FROM php:8.2.35-apache
 
-ARG MANTIS_VERSION=2.26.1
+ARG MANTIS_VERSION=2.28.4
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
