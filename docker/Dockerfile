@@ -1,7 +1,8 @@
 # Reveille – local MantisBT test image.
-# Builds a known-good MantisBT 2.x on PHP 7.4 so the plugin can be exercised
-# exactly against its declared minimum requirements.
-FROM php:7.4-apache
+# Builds a known-good MantisBT 2.x on a supported, patched PHP (8.2.35, fixes
+# php2shell CVE-2026-109618/-109619). PHP 7.4 compatibility of the plugin is
+# covered by the lint workflow.
+FROM php:8.2.35-apache
 
 ARG MANTIS_VERSION=2.26.1
 
