@@ -22,3 +22,9 @@ jobs:
 
       - name: PHP version
         run: docker run --rm --entrypoint php ci-image -v
+
+      - name: Validate docker-compose.yml
+        working-directory: docker
+        run: |
+          cp .env.example .env
+          docker compose config --quiet
