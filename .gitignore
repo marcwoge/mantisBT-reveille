@@ -7,3 +7,6 @@ Thumbs.db
 
 # Docker
 docker/db_data/
+# Local Docker sandbox secrets (see docker/.env.example)
+docker/.env
+.env

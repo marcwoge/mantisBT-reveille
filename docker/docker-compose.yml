@@ -1,8 +1,9 @@
 # Reveille – local test environment.
 #
-# Brings up MantisBT (PHP 8.2) + MySQL 8 with the plugin live-mounted so you can
+# Brings up MantisBT (PHP 8.4) + MySQL 8.4 LTS with the plugin live-mounted so you can
 # edit the plugin on the host and refresh the browser.
 #
+#   cp .env.example .env   # once; then set your own passwords/salt
 #   docker compose up -d --build
 #   -> MantisBT on http://localhost:8080
 #
@@ -10,18 +11,19 @@
 
 services:
   db:
-    image: mysql:8.0
-    command: --default-authentication-plugin=mysql_native_password
+    # MySQL 8.4 LTS (8.0 is EOL since April 2026). PHP's mysqlnd supports the
+    # default caching_sha2_password plugin, so no auth override is needed.
+    image: mysql:8.4.13
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD in docker/.env (see .env.example)}
       MYSQL_DATABASE: bugtracker
       MYSQL_USER: mantis
-      MYSQL_PASSWORD: mantis
+      MYSQL_PASSWORD: ${MANTIS_DB_PASSWORD:?set MANTIS_DB_PASSWORD in docker/.env (see .env.example)}
     # MySQL is only reachable from within the compose network (no host port).
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p\"$$MYSQL_ROOT_PASSWORD\""]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -33,8 +35,13 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    environment:
+      # Read by config_inc.php via getenv().
+      MANTIS_DB_PASSWORD: ${MANTIS_DB_PASSWORD:?set MANTIS_DB_PASSWORD in docker/.env (see .env.example)}
+      MANTIS_CRYPTO_MASTER_SALT: ${MANTIS_CRYPTO_MASTER_SALT:?set MANTIS_CRYPTO_MASTER_SALT in docker/.env (see .env.example)}
     ports:
-      - "8080:80"
+      # Bound to localhost only - not reachable from the LAN.
+      - "127.0.0.1:8080:80"
     volumes:
       # Live plugin development: the Reveille/ plugin folder is mounted.
       - ../Reveille:/var/www/html/plugins/Reveille

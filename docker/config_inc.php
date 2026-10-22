@@ -2,7 +2,7 @@
 /**
  * MantisBT configuration for the Reveille Docker test environment.
  *
- * NOTE: These are throwaway demo credentials. Never reuse them in production.
+ * NOTE: Local test setup only. Secrets come from docker/.env via docker-compose.yml.
  */
 
 # --- Database -------------------------------------------------------------
@@ -10,12 +10,12 @@ $g_hostname      = 'db';
 $g_db_type       = 'mysqli';
 $g_database_name = 'bugtracker';
 $g_db_username   = 'mantis';
-$g_db_password   = 'mantis';
+$g_db_password   = (string) getenv('MANTIS_DB_PASSWORD');
 
 # --- General --------------------------------------------------------------
 $g_default_timezone = 'Europe/Berlin';
-# Demo salt only – generate a fresh one for any real installation.
-$g_crypto_master_salt = 'REVEILLE_DOCKER_DEMO_SALT_CHANGE_ME_0123456789ABCDEF';
+# Set MANTIS_CRYPTO_MASTER_SALT in docker/.env (>= 16 characters).
+$g_crypto_master_salt = (string) getenv('MANTIS_CRYPTO_MASTER_SALT');
 
 # Show the installer / upgrade page when needed.
 $g_admin_checks = ON;

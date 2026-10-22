@@ -1,6 +1,6 @@
 # Reveille – Docker Quickstart
 
-A throwaway MantisBT 2.x + MySQL 8 environment for developing and testing the
+A throwaway MantisBT 2.x + MySQL 8.4 environment for developing and testing the
 Reveille plugin. The repository root is live-mounted into the container, so you
 edit the plugin on your host and just refresh the browser.
 
@@ -12,8 +12,11 @@ edit the plugin on your host and just refresh the browser.
 
 ```bash
 cd docker
+cp .env.example .env   # once; then set your own passwords/salt
 docker compose up -d --build
 ```
+
+The port is bound to `127.0.0.1` only (not reachable from the LAN).
 
 - MantisBT: <http://localhost:8080>
 - MySQL: internal only (no host port)
@@ -22,7 +25,7 @@ docker compose up -d --build
 
 Open <http://localhost:8080/admin/install.php> and click **Install/Upgrade
 Database**. The database credentials are already supplied via the mounted
-`config_inc.php` (db `bugtracker`, user `mantis`, password `mantis`), so you can
+`config_inc.php` (db `bugtracker`, user `mantis`, password = `MANTIS_DB_PASSWORD` from `docker/.env`), so you can
 just submit the form. The `deferred` status (15) and its Change-Status labels
 are pre-mounted too (`config_inc.php` + `custom_strings_inc.php`), so no manual
 status setup is needed.
@@ -44,7 +47,7 @@ Log in as `administrator` / `root`, then go to **Manage → Manage Plugins** and
 Load the 3 projects + 10 sleeping tickets:
 
 ```bash
-docker compose exec -T db mysql -umantis -pmantis bugtracker < init.sql
+docker compose exec -T db sh -c 'mysql -umantis -p"$MYSQL_PASSWORD" bugtracker' < init.sql
 ```
 
 ## 5. See it work
