@@ -2,7 +2,7 @@
 # Builds a known-good MantisBT 2.x on a supported, patched PHP (8.4.27; PHP 8.2
 # reaches security EOL on 2026-12-31). Syntax of the plugin on other PHP
 # versions is covered by the lint workflow.
-FROM php:8.4.27-apache
+FROM php:8.5.0-apache
 
 ARG MANTIS_VERSION=2.28.4
 # SHA-256 from the official mantisbt-2.28.4.tar.gz.digests file on SourceForge.
