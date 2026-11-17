@@ -53,7 +53,7 @@ Die Wiedervorlage (`activate_on`) wird pro Projekt berechnet (siehe
 ## Voraussetzungen
 
 - MantisBT 2.x (empfohlen: **2.28.4 oder neuer**, behebt CVE-2026-47156)
-- PHP 7.4+
+- PHP 7.4+ (in der CI getestet mit PHP 8.3, 8.4 und 8.5)
 - Keine externen Abhängigkeiten (kein Composer, kein NPM)
 
 ## Der Status `deferred`

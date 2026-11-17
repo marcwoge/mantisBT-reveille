@@ -49,7 +49,7 @@ The activation date is computed per project (see [Configuration](#configuration)
 ## Requirements
 
 - MantisBT 2.x (recommended: **2.28.4 or newer**, fixes CVE-2026-47156)
-- PHP 7.4+
+- PHP 7.4+ (CI-tested with PHP 8.3, 8.4 and 8.5)
 - No external dependencies (no Composer, no NPM)
 
 ## The `deferred` status

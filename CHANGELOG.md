@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- CI lint matrix now covers PHP 8.3, 8.4 and 8.5; PHP 8.2 (security end of
+  life 2026-12-31) is no longer tested. The documented minimum (PHP 7.4) and
+  the code are unchanged.
+
 ## [1.0.1] - 2026-07-01
 
 ### Fixed
