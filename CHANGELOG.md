@@ -7,10 +7,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 ### Changed
-- Minimum supported PHP version raised from 7.4 to **8.3**. PHP 8.2 reaches its
-  security end of life on 2026-12-31; the CI lint matrix now covers PHP 8.3,
-  8.4 and 8.5. The code itself was not changed – this is a change of the
-  supported/tested range only.
+- CI lint matrix now covers PHP 8.3, 8.4 and 8.5; PHP 8.2 (security end of
+  life 2026-12-31) is no longer tested. The documented minimum (PHP 7.4) and
+  the code are unchanged.
 
 ## [1.0.1] - 2026-07-01
 
