@@ -1,6 +1,6 @@
 # Reveille
 
-[![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg)](https://www.php.net/)
+[![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4.svg)](https://www.php.net/)
 [![MantisBT](https://img.shields.io/badge/MantisBT-2.x-F0F0F0.svg)](https://www.mantisbt.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Maintained](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/marcwoge/mantisBT-reveille)
@@ -49,7 +49,7 @@ The activation date is computed per project (see [Configuration](#configuration)
 ## Requirements
 
 - MantisBT 2.x (recommended: **2.28.4 or newer**, fixes CVE-2026-47156)
-- PHP 7.4+
+- PHP 8.3+ (CI: PHP 8.3, 8.4, 8.5)
 - No external dependencies (no Composer, no NPM)
 
 ## The `deferred` status
@@ -216,7 +216,7 @@ Combine this with setting `due_date` to control when Reveille wakes it up again.
 ## Contributing
 
 Issues and pull requests are welcome. Please keep the plugin dependency-free and
-PHP 7.4 compatible.
+PHP 8.3 compatible.
 
 ## License
 

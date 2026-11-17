@@ -1,6 +1,6 @@
 # Reveille
 
-[![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg)](https://www.php.net/)
+[![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4.svg)](https://www.php.net/)
 [![MantisBT](https://img.shields.io/badge/MantisBT-2.x-F0F0F0.svg)](https://www.mantisbt.org/)
 [![Lizenz: MIT](https://img.shields.io/badge/Lizenz-MIT-yellow.svg)](LICENSE)
 [![Gepflegt](https://img.shields.io/badge/Gepflegt-ja-brightgreen.svg)](https://github.com/marcwoge/mantisBT-reveille)
@@ -53,7 +53,7 @@ Die Wiedervorlage (`activate_on`) wird pro Projekt berechnet (siehe
 ## Voraussetzungen
 
 - MantisBT 2.x (empfohlen: **2.28.4 oder neuer**, behebt CVE-2026-47156)
-- PHP 7.4+
+- PHP 8.3+ (CI: PHP 8.3, 8.4, 8.5)
 - Keine externen Abhängigkeiten (kein Composer, kein NPM)
 
 ## Der Status `deferred`
@@ -225,7 +225,7 @@ Ticket zur Wiedervorlage wieder aufweckt.
 ## Mitwirken
 
 Issues und Pull Requests sind willkommen. Bitte halten Sie das Plugin
-abhängigkeitsfrei und PHP-7.4-kompatibel.
+abhängigkeitsfrei und PHP-8.3-kompatibel.
 
 ## Lizenz
 
